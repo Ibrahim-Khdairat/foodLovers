@@ -1,4 +1,16 @@
 'use strict'
+let formEl = document.getElementById('form');
+formEl.addEventListener('submit' , addOrder);
+
+
+let tableEl = document.getElementById('table');
+let bodyEl = document.getElementById('tbody');
+
+
+let removeEl = document.getElementById('clear');
+removeEl.addEventListener('click' , removeOrders);
+
+
 
 let cxList =[];
 
@@ -8,14 +20,11 @@ function Customer ( cxName , foodType )
     this.cxName = cxName;
     this.foodType = foodType;
     this.path = `img/${foodType}.jpg`;
-    // this.prise = prise;
     cxList.push(this);
 
 }
 
 
-let formEl = document.getElementById('form');
-formEl.addEventListener('submit' , addOrder);
 
 function addOrder(event)
 {
@@ -25,12 +34,12 @@ function addOrder(event)
     let newFoodType = event.target.type.value;
 
     new Customer ( newCxName , newFoodType);
-tableRender();
-addToLocalStorage();
+
+    tableRender();
+    addToLocalStorage();
+
 
 }
-let tableEl = document.getElementById('table');
-let bodyEl = document.getElementById('tbody');
 function tableRender()
 {
     bodyEl.textContent = "";
@@ -38,7 +47,7 @@ function tableRender()
     for (let index = 0; index < cxList.length ; index++) 
     {
         let trEl = document.createElement('tr');
-        tableEl.appendChild(trEl);
+        bodyEl.appendChild(trEl);
 
         let tdEl_1 =  document.createElement('td');
         trEl.appendChild(tdEl_1);
@@ -49,12 +58,10 @@ function tableRender()
 
         let tdEl_2 =  document.createElement('td');
         trEl.appendChild(tdEl_2);
-        tdEl_2.textContent = `Customer Name : ${cxList[index].cxName} \nFood Type : ${cxList[index].foodType} \n
-         Food Prise : ${random()}`;
+        tdEl_2.textContent = `Customer Name : ${cxList[index].cxName} /`+'\n'+` Food Type : ${cxList[index].foodType}  /`+`\n`+` Food Prise : ${random()} JOD `;
 
 
 
-        
     }
 
 }
@@ -71,7 +78,6 @@ function addToLocalStorage()
     let data = JSON.stringify(cxList);
     localStorage.setItem('Orders', data);
 
-    window.location.reload();
 
 }
 
@@ -91,8 +97,7 @@ function gettingFromLocalStorage()
 
 gettingFromLocalStorage();
 
-let removeEl = document.getElementById('clear');
-removeEl.addEventListener('click' , removeOrders);
+
 
 function removeOrders()
 {
