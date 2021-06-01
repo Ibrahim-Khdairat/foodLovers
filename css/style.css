@@ -1,0 +1,105 @@
+main
+{
+    font-family: 'Fredoka One', cursive;
+}
+header
+{
+    background-color: rgba(255, 229, 72, 255);
+}
+
+header h1 
+{
+    font-family: 'Fredoka One', cursive;
+
+    font-size: xx-large;
+    color: red;
+    margin-left: 600px;
+
+
+
+}
+header img
+{
+    width: 100px;
+    height: 50px;
+}
+
+
+#form
+{
+   float: left;
+    width: 300px;
+    height: 300px;
+    margin-left: 100px;
+    /* margin-top: 50px; */
+    background-color: rgba(255, 229, 72, 255) ;
+    padding-left: 100px;
+    padding-top: 30px;
+border-radius: 5px;
+color: red;
+font-size: large;
+font-weight: 500;
+
+
+}
+#name
+{
+    margin: 10px;
+    width: 200px;
+
+}
+
+#type
+{
+    margin: 10px;
+    width: 200px;
+
+}
+
+#table
+{
+    margin-left: 700px;
+    margin-top: 50px;
+    background-color: rgba(255, 229, 72, 255) ;
+    border-radius: 5px;
+
+
+}
+#table th
+{
+    border: 2px red solid;
+    padding: 10px;
+    width: 300px;
+
+
+}
+
+#table img
+{
+    width: 100px;
+    height: 100px;
+}
+
+#table td
+{
+    border: 2px red solid;
+    padding: 10px;
+    font-size: larger;
+}
+
+#clear
+{
+     background-color: red;
+    margin-left: 550px;
+    margin-bottom: 100px;
+}
+
+#submit
+{
+    background-color: red;
+    width: 200px;
+    border-radius: 5px;
+    margin: 10px;
+
+
+}
